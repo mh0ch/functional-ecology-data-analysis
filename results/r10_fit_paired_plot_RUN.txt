@@ -1,0 +1,79 @@
+
+> source("/home/michi/uni/funktionelle ökologie/data-analysis/r10_fit_paired_plot.R", encoding = "UTF-8")
+Rows: 24                                                                      
+Columns: 8
+$ site    <chr> "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "C…
+$ plot    <chr> "1", "1", "2", "2", "3", "3", "1", "1", "2", "2", "3", "3", "1…
+$ plot_id <chr> "A1", "A1", "A2", "A2", "A3", "A3", "B1", "B1", "B2", "B2", "B…
+$ day     <chr> "Dienstag", "Donnerstag", "Dienstag", "Donnerstag", "Dienstag"…
+$ temp    <dbl> 9.95, 11.90, 10.30, 12.25, 10.30, 12.05, 10.65, 13.00, 11.05, …
+$ par     <dbl> 597.3333, 1208.6667, 550.0000, 1130.0000, 381.0000, 1203.3333,…
+$ reco    <dbl> 3.020085, 4.860488, 3.760805, 5.689058, 4.369431, 5.272061, 4.…
+$ gpp     <dbl> 8.144803, 15.490324, 8.919399, 15.659132, 5.528913, 14.173107,…
+
+--- Within-plot Q10 fit ---
+Q10 = 4.132 
+
+
+Call:
+lm(formula = log(reco) ~ I((temp - 10)/10) + plot_id, data = d)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.31829 -0.08448  0.00000  0.08448  0.31829 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        1.21199    0.17371   6.977 2.34e-05 ***
+I((temp - 10)/10)  1.41866    0.62810   2.259   0.0452 *  
+plot_idA2          0.13872    0.23256   0.597   0.5629    
+plot_idA3          0.18985    0.23205   0.818   0.4306    
+plot_idB1          0.08181    0.23832   0.343   0.7379    
+plot_idB2          0.07747    0.24497   0.316   0.7577    
+plot_idB3          0.22533    0.24116   0.934   0.3702    
+plot_idC1         -0.47947    0.23626  -2.029   0.0673 .  
+plot_idC2         -0.18491    0.23363  -0.791   0.4454    
+plot_idC3         -0.56691    0.24655  -2.299   0.0421 *  
+plot_idD1         -0.11022    0.23154  -0.476   0.6434    
+plot_idD2         -0.55472    0.23156  -2.396   0.0355 *  
+plot_idD3         -0.40879    0.23565  -1.735   0.1107    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2315 on 11 degrees of freedom
+Multiple R-squared:  0.8539,    Adjusted R-squared:  0.6944 
+F-statistic: 5.356 on 12 and 11 DF,  p-value: 0.004559
+
+
+--- R10 per measurement ---
+# A tibble: 24 × 7
+   site  plot  plot_id day         temp  reco   r10
+   <chr> <chr> <chr>   <chr>      <dbl> <dbl> <dbl>
+ 1 A     1     A1      Dienstag    9.95  3.02  3.04
+ 2 A     1     A1      Donnerstag 11.9   4.86  3.71
+ 3 A     2     A2      Dienstag   10.3   3.76  3.60
+ 4 A     2     A2      Donnerstag 12.2   5.69  4.13
+ 5 A     3     A3      Dienstag   10.3   4.37  4.19
+ 6 A     3     A3      Donnerstag 12.0   5.27  3.94
+ 7 B     1     B1      Dienstag   10.6   4.20  3.83
+ 8 B     1     B1      Donnerstag 13     5.32  3.47
+ 9 B     2     B2      Dienstag   11.0   3.88  3.34
+10 B     2     B2      Donnerstag 13.4   6.34  3.94
+11 B     3     B3      Dienstag   11.0   5.28  4.61
+12 B     3     B3      Donnerstag 13.0   5.92  3.84
+13 C     1     C1      Montag     10.2   2.11  2.04
+14 C     1     C1      Dienstag   10.1   2.16  2.13
+15 C     2     C2      Montag     10.7   3.2   2.90
+16 C     2     C2      Dienstag   10.2   2.75  2.69
+17 C     3     C3      Montag      9.35  2.16  2.36
+18 C     3     C3      Dienstag    9.8   1.49  1.54
+19 D     1     D1      Montag     10.7   4.22  3.83
+20 D     1     D1      Dienstag   11.2   2.83  2.37
+21 D     2     D2      Montag     10.8   1.56  1.40
+22 D     2     D2      Dienstag   11.2   3.17  2.65
+23 D     3     D3      Montag     11.4   3.44  2.82
+24 D     3     D3      Dienstag   11.8   2.30  1.77
+                                                                              
+Saved: data/r10_per_measurement.csv
+Q10 used for standardization: 4.132 
+> 

@@ -1,0 +1,33 @@
+> source("/home/michi/uni/funktionelle ökologie/data-analysis/r10_literature.R", encoding = "UTF-8")
+--- R10 per measurement (Q10 = 1.83 ) ---                                     
+# A tibble: 24 × 7
+   site  plot  plot_id day         temp  reco   r10
+   <chr> <chr> <chr>   <chr>      <dbl> <dbl> <dbl>
+ 1 A     1     A1      Dienstag    9.95  3.02  3.03
+ 2 A     1     A1      Donnerstag 11.9   4.86  4.33
+ 3 A     2     A2      Dienstag   10.3   3.76  3.69
+ 4 A     2     A2      Donnerstag 12.2   5.69  4.97
+ 5 A     3     A3      Dienstag   10.3   4.37  4.29
+ 6 A     3     A3      Donnerstag 12.0   5.27  4.66
+ 7 B     1     B1      Dienstag   10.6   4.20  4.04
+ 8 B     1     B1      Donnerstag 13     5.32  4.43
+ 9 B     2     B2      Dienstag   11.0   3.88  3.64
+10 B     2     B2      Donnerstag 13.4   6.34  5.18
+11 B     3     B3      Dienstag   11.0   5.28  4.98
+12 B     3     B3      Donnerstag 13.0   5.92  4.92
+13 C     1     C1      Montag     10.2   2.11  2.08
+14 C     1     C1      Dienstag   10.1   2.16  2.14
+15 C     2     C2      Montag     10.7   3.2   3.07
+16 C     2     C2      Dienstag   10.2   2.75  2.72
+17 C     3     C3      Montag      9.35  2.16  2.24
+18 C     3     C3      Dienstag    9.8   1.49  1.51
+19 D     1     D1      Montag     10.7   4.22  4.05
+20 D     1     D1      Dienstag   11.2   2.83  2.62
+21 D     2     D2      Montag     10.8   1.56  1.49
+22 D     2     D2      Dienstag   11.2   3.17  2.94
+23 D     3     D3      Montag     11.4   3.44  3.16
+24 D     3     D3      Dienstag   11.8   2.30  2.06
+                                                                              
+Saved: data/r10_per_measurement_q10_1.8.csv 
+Q10 used for standardization: 1.83 
+> 

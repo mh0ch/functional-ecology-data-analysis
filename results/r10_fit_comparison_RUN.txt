@@ -1,0 +1,29 @@
+> source("/home/michi/uni/funktionelle ökologie/data-analysis/r10_fit_comparison.R", encoding = "UTF-8")
+Temperature range: 9.35 13.35 °C                                              
+Reco range: 1.49 6.34 µmol m⁻² s⁻¹
+
+--- 1. GLOBAL POOLED FIT (n = 24) ---
+  R10 = 2.737  Q10 = 11.866 
+
+--- 2. PER-SITE FITS (n = 6 each) ---
+# A tibble: 4 × 3
+# Groups:   site [4]
+  site    R10   Q10
+  <chr> <dbl> <dbl>
+1 A      3.54  7.09
+2 B      3.97  3.51
+3 C      2.21 75.1 
+4 D     NA    NA   
+
+--- 3. WITHIN-PLOT POOLED FIT (n = 24, 12 within-plot pairs) ---
+  Q10 = 4.132 
+
+--- COMPARISON ---
+# A tibble: 4 × 2
+  method               Q10
+  <chr>              <dbl>
+1 global pooled      11.9 
+2 per-site mean      28.6 
+3 per-site median     7.09
+4 within-plot pooled  4.13
+> 
