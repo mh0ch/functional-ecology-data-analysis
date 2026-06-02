@@ -49,3 +49,31 @@ write_csv(d, out_file)
 
 cat("\nSaved:", out_file, "\n")
 cat("Q10 used for standardization:", Q10, "\n")
+# ---- Average to plot level -------------------------------------------------
+plot_means <- d |>
+  group_by(site, plot, plot_id) |>
+  summarise(
+    r10_mean  = mean(r10),
+    r10_day1  = r10[1],           # keep both days visible for sanity check
+    r10_day2  = r10[2],
+    diff_pct  = abs(r10[1] - r10[2]) / mean(r10) * 100,
+    .groups   = "drop"
+  ) |>
+  mutate(across(where(is.numeric), \(x) round(x, 4)))
+ 
+print(plot_means, n = Inf)
+ 
+# ---- Save to CSV -----------------------------------------------------------
+dir.create("data", showWarnings = FALSE)
+write_csv(plot_means, "data/r10_plot_means.csv")
+cat("\nSaved: data/r10_plot_means.csv\n")
+
+# ---- Tuesday measurements only (one per plot, no averaging needed) ---------
+plots_tuesdays <- d |>
+  filter(day == "Dienstag") |>
+  select(site, plot, plot_id, temp, reco, r10) |>
+  mutate(across(where(is.numeric), \(x) round(x, 3))) |>
+  print(n = Inf)
+
+write_csv(plots_tuesdays, "data/r10_plot_tuesdays.csv")
+
