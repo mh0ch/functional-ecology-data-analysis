@@ -153,11 +153,11 @@ p4 <- ggplot() +
                aes(x = temp, xend = temp,
                    y = reco,  yend = r10 + 0.05,
                    colour = site),
-               linewidth = 0.6, alpha = 0.3) +
+               linewidth = 0.6, alpha = 0.4) +
   # Raw Reco — open circles
   geom_point(data = df,
              aes(x = temp, y = reco, colour = site),
-             shape = 1, size = 2.8, stroke = 0.8, alpha = 0.4) +
+             shape = 1, size = 2.8, stroke = 0.8, alpha = 0.5) +
   # R10 — filled circles
   geom_point(data = df,
              aes(x = temp, y = r10, colour = site),
